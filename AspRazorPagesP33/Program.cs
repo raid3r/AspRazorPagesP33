@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<IPersonDataProvider, PersonDataProvider>();
+builder.Services.AddScoped<IPersonDataProvider, FilePersonDataProvider>();
 
 var app = builder.Build();
 

@@ -99,6 +99,11 @@ public class PersonDataProvider : IPersonDataProvider
         ];
     }
 
+    public void Add(Person person)
+    {
+        throw new NotImplementedException();
+    }
+
     public List<Person> GetAll()
     {
         return persons;
@@ -107,5 +112,10 @@ public class PersonDataProvider : IPersonDataProvider
     public Person GetById(int id)
     {
         return persons.FirstOrDefault(p => p.Id == id);
+    }
+
+    public void SaveChanges()
+    {
+        // No implementation needed for in-memory data
     }
 }
