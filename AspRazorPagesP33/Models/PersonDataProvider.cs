@@ -1,6 +1,6 @@
 ﻿namespace AspRazorPagesP33.Models;
 
-public class PersonDataProvider
+public class PersonDataProvider : IPersonDataProvider
 {
 
     private List<Person> persons;

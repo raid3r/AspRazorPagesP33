@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AspRazorPagesP33.Pages;
 
-public class PersonsModel(PersonDataProvider dataProvider) : PageModel
+public class PersonsModel(IPersonDataProvider dataProvider) : PageModel
 {
     public List<Person> Persons { get; set; }
 

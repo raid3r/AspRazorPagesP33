@@ -4,8 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
-builder.Services.AddScoped<PersonDataProvider>();
+builder.Services.AddScoped<IPersonDataProvider, PersonDataProvider>();
 
 var app = builder.Build();
 
@@ -34,5 +33,10 @@ app.Run();
  * Нова сторінка Razor Pages
  * Виведіть їх на сторінку у вигляді таблиці
  * Колонки: Id, Name, Опис, Email, День народження, Навички
+ * 
+ * 
+ * Винести в окремий клас дані та логіку отримання даних
+ * Реалізуйте інтерфейс IPersonDataProvider
+ * 
  * 
  */ 
