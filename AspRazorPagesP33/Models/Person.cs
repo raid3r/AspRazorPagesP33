@@ -28,4 +28,8 @@ public class Person
     public DateTime Birthday { get; set; }
 
     public List<Skill> Skills { get; set; } = [];
+    
+    [Display(Name = "Аватарка")]
+    public string? AvatarImageSrc { get; set; } = null;
+
 }

@@ -5,7 +5,7 @@
 
 <h2>Create New Person</h2>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Person.Name"></label>
         <input asp-for="Person.Name" class="form-control" />
@@ -25,6 +25,11 @@
         <label asp-for="Person.Birthday"></label>
         <input asp-for="Person.Birthday" class="form-control" type="date" />
         <span asp-validation-for="Person.Birthday" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="AvatartImage"></label>
+        <input asp-for="AvatartImage" accept=".jpg,.jpeg,.png"  type="file" class="form-control" />
+        <span asp-validation-for="AvatartImage" class="text-danger"></span>
     </div>
     <div class="mt-4">
         <button type="submit" class="btn btn-primary">Create</button>
