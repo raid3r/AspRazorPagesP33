@@ -1,6 +1,6 @@
 ﻿namespace AspRazorPagesP33.Models;
 
-public class FilePersonDataProvider: IPersonDataProvider
+public class FilePersonDataProvider : IPersonDataProvider
 {
     public FilePersonDataProvider()
     {
@@ -46,6 +46,20 @@ public class FilePersonDataProvider: IPersonDataProvider
 
     public void SaveChanges()
     {
-        SaveToFile();
+        persons.ForEach(p =>
+        {
+            p.Skills.ForEach(skill =>
+            {
+                if (skill.Id == 0)
+                {
+                    var maxSkillId = persons.SelectMany(per => per.Skills).Count() > 0
+                        ? persons.SelectMany(per => per.Skills).Max(s => s.Id)
+                        : 0;
+                    skill.Id = maxSkillId + 1;
+                }
+            });
+
+            SaveToFile();
+        });
     }
 }

@@ -28,7 +28,16 @@
                 <td>@person.Description</td>
                 <td>@person.Email</td>
                 <td>@person.Birthday.ToString("dd.MM.yyyy")</td>
-                <td><a asp-page="/Info" asp-route-id="@person.Id" class="btn btn-primary">View Details</a></td>
+                <td>
+                    <a asp-page="/PersonEdit" asp-route-id="@person.Id" 
+                    class="btn btn-warning">Edit</a>
+
+                    <a asp-page="/PersonSkills" asp-route-id="@person.Id"
+                       class="btn btn-info">Skills</a>
+
+                    <a asp-page="/Info" asp-route-id="@person.Id" 
+                    class="btn btn-primary">View Details</a>
+                    </td>
             </tr>
         }
     </tbody>
