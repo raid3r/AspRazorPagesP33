@@ -38,7 +38,11 @@
                     </div>
                 </td>
                 <td>
-                    <a class="btn btn-warning" asp-page="/PersonSkillEdit" asp-route-id="@skill.Id">Edit</a>
+                    <a class="btn btn-warning" asp-page="/PersonSkillEdit"
+                       asp-route-personId="@Model.Person.Id"
+                       asp-route-skillId="@skill.Id">
+                        Edit
+                    </a>
                 </td>
             </tr>
         }
